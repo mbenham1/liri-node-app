@@ -42,7 +42,7 @@ function concertThis() {
                 console.log("Name of the venue: " + response.data[i].venue.name);
                 console.log("Venue location: " + theLocation);
                 console.log("Date of the Event: " + moment(response.data[i].datetime).format("MM/DD/YYYY"));
-                console.log("-------------");
+                console.log("-------------------");
 
             }
         }
