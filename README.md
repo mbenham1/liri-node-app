@@ -2,7 +2,7 @@
 <h1>Overview</h1>
 
 Command:  node liri.js 
-
+![default](images/liri.js.png)
 Command:  node liri.js concert-this "the 1975"
 
 Command:  node liri.js movie-this && node liri.js movie-this "the dark knight"
