@@ -20,7 +20,7 @@ switch (type) {
     case ("concert-this"): concertThis(); break;
     case ("movie-this"): movieThis(); break;
     case ("spotify-this-song"): spotifyThis(); break;
-    case ("do-what-it-says") : doWhat(); break;
+    case ("do-what-it-says"): doWhat(); break;
 
     default: console.log("Enter 'node liri.js' then" + "\r\n" + "\r\n" +
         "concert-this" + "\r\n" + "-or-" + "\r\n" +
@@ -102,6 +102,7 @@ function spotifyThis() {
                 console.log("Song Title: " + response.tracks.items[0].name);
                 console.log("Preview URL (if available): " + response.tracks.items[0].preview_url);
                 console.log("Album: " + response.tracks.items[0].album.name);
+                console.log("Length: " + response.tracks.items[0].duration_ms + " ms");
 
             })
 
@@ -121,6 +122,7 @@ function spotifyThis() {
                 console.log("Song Title: " + response.tracks.items[0].name);
                 console.log("Preview URL (if available): " + response.tracks.items[0].preview_url);
                 console.log("Album: " + response.tracks.items[0].album.name);
+                console.log("Length: " + response.tracks.items[0].duration_ms + " ms");
 
             })
 
@@ -134,14 +136,14 @@ function spotifyThis() {
 // If type = do-what-it-says
 
 function doWhat() {
-    fs.readFile("random.txt", "utf8", function(error,data) {
+    fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
             return console.log(error);
         }
 
         var array = data.split(",");
         title = array[1];
-        
+
         spotifyThis();
     })
 }
