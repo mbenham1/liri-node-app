@@ -44,9 +44,17 @@ function concertThis() {
                 console.log("Date of the Event: " + moment(response.data[i].datetime).format("MM/DD/YYYY"));
                 console.log("-------------------");
 
+                
+
+                fs.writeFile("log.txt", title, function(err) {
+                    if (err) throw err;
+                    // console.log(title);
+                  });
+
             }
         }
     );
+
 }
 
 // If type = movie-this
