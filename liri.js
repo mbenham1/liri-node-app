@@ -38,11 +38,10 @@ function concertThis() {
     axios.get(queryURL).then(
         function (response) {
             for (var i = 0; i < response.data.length; i++) {
-                var theLocation = response.data[i].venue.city + ", " + response.data[i].venue.region + ", " + response.data[i].venue.country
-                console.log("Name of the venue: " + response.data[i].venue.name);
-                console.log("Venue location: " + theLocation);
-                console.log("Date of the Event: " + moment(response.data[i].datetime).format("MM/DD/YYYY"));
-                console.log("-------------------");
+                console.log("Venue: " + response.data[i].venue.name);
+                console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country);
+                console.log("Date: " + moment(response.data[i].datetime).format("DD/MM/YYYY"));
+                console.log("---- ---- ---- ----");
 
                 
 
